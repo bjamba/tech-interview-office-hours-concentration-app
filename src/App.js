@@ -44,17 +44,21 @@ function App() {
 
 
   async function revealCard(i) {
-    // Set appropriate state for card
-    const revealedCard = { displayCard: 1, cardValue: cards[i].cardValue };
-    setCards(cards.map((c, idx) => i === idx ? revealedCard : c));
-    if (cardOneIdx === -1) {
-      // Set card one
-      setCardOneIdx(i);
 
-    } else if (cardOneIdx !== i && cardTwoIdx === -1) {
-      // Evaluate match
-      setCardTwoIdx(i);
-      await evaluateMatch(cardOneIdx, i);
+    // Only reveal a hidden card.
+    if (cards[i].displayCard !== 0) {
+      // Set appropriate state for card
+      const revealedCard = { displayCard: 1, cardValue: cards[i].cardValue };
+      setCards(cards.map((c, idx) => i === idx ? revealedCard : c));
+      if (cardOneIdx === -1) {
+        // Set card one
+        setCardOneIdx(i);
+  
+      } else if (cardOneIdx !== i && cardTwoIdx === -1) {
+        // Evaluate match
+        setCardTwoIdx(i);
+        await evaluateMatch(cardOneIdx, i);
+      }
     }
   }
 
