@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# tech-interview-office-hours-concentration-app
+Welcome to our Case Study for Tech Interviews Office Hours Lab 6, "Deploy an App": https://docs.google.com/presentation/d/1Lw16gYCTE6pPh5SPJzRyFf38mFSzu514GUA7DkcE0Mw/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For this lab, we're going to walk through the creation of a Concentration game that has the following user stories and requirements.
 
-## Available Scripts
+## Core User Story
+"I want an app to let me play the game of Concentration."
 
-In the project directory, you can run:
+## Requirements
+<b>Requirements</b>
+1. There should be a grid of 16 “cards” (8 pairs), arranged 4x4 and flipped to hide the card.
+2. Clicking on a card should reveal it. You can’t have more than two cards revealed at a time.
+3. If you click two cards and they match, they stay revealed. Otherwise, they flip back over.
+4. When all cards are revealed, the game should let you know that you’ve won.
+5. You should be able to play again without refreshing the app.
 
-### `npm start`
+<b>Nice to Haves</b>
+1. Having a timer that starts when you click your first card and stops when you reveal all cards.
+2. Changing the grid size to have more pairs.
+3. You do some fancy styling.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Time Limit
+~ 1 hour
