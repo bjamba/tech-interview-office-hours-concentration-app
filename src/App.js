@@ -40,19 +40,20 @@ function App() {
   // Cards should be an array of objects with attributes displayCard, cardValue
   const [cards, setCards] = useState(generateCards());
   const [cardOneIdx, setCardOneIdx] = useState(-1);
+  const [cardTwoIdx, setCardTwoIdx] = useState(-1);
 
 
   async function revealCard(i) {
     // Set appropriate state for card
     const revealedCard = { displayCard: 1, cardValue: cards[i].cardValue };
     setCards(cards.map((c, idx) => i === idx ? revealedCard : c));
-
     if (cardOneIdx === -1) {
       // Set card one
       setCardOneIdx(i);
 
-    } else {
+    } else if (cardTwoIdx === -1) {
       // Evaluate match
+      setCardTwoIdx(i);
       await evaluateMatch(cardOneIdx, i);
     }
   }
@@ -73,6 +74,7 @@ function App() {
       }));
     }
     setCardOneIdx(-1);
+    setCardTwoIdx(-1);
 
     // evaluateWin
     evaluateWin();
