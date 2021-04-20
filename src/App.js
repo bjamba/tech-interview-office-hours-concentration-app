@@ -51,7 +51,7 @@ function App() {
       // Set card one
       setCardOneIdx(i);
 
-    } else if (cardTwoIdx === -1) {
+    } else if (cardOneIdx !== i && cardTwoIdx === -1) {
       // Evaluate match
       setCardTwoIdx(i);
       await evaluateMatch(cardOneIdx, i);
