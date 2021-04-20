@@ -1,10 +1,10 @@
 # tech-interview-office-hours-concentration-app
-Welcome to our Case Study for Tech Interviews Office Hours Lab 6, "Deploy an App": https://docs.google.com/presentation/d/1Lw16gYCTE6pPh5SPJzRyFf38mFSzu514GUA7DkcE0Mw/
+Welcome to our Case Study for Tech Interviews Office Hours Lab 6, "Deploy an App": https://docs.google.com/presentation/d/1u5Ijmf04G-yLfkw5Nz3lzgVSU6y6MAabbfQQVeKXPw4/edit#slide=id.g9de3fb1d5d_1_78
 
-For this lab, we're going to walk through the creation of a Concentration game that has the following user stories and requirements.
+For this case study, we're going to walk through the creation of a dice rolling app that has the following user stories and requirements.
 
 ## Core User Story
-"I want an app to let me play the game of Concentration."
+"I want an app to select a number of dice, then roll them and record the result."
 
 ## Requirements
 <b>Requirements</b>
@@ -13,6 +13,7 @@ For this lab, we're going to walk through the creation of a Concentration game t
 3. If you click two cards and they match, they stay revealed. Otherwise, they flip back over.
 4. When all cards are revealed, the game should let you know that you’ve won.
 5. You should be able to play again without refreshing the app.
+
 
 <b>Nice to Haves</b>
 1. Having a timer that starts when you click your first card and stops when you reveal all cards.
