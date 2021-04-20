@@ -46,7 +46,7 @@ function App() {
   async function revealCard(i) {
 
     // Only reveal a hidden card.
-    if (cards[i].displayCard !== 0) {
+    if (cards[i].displayCard === 0) {
       // Set appropriate state for card
       const revealedCard = { displayCard: 1, cardValue: cards[i].cardValue };
       setCards(cards.map((c, idx) => i === idx ? revealedCard : c));
