@@ -87,6 +87,8 @@ function App() {
 
   function resetGame() {
     setCards(generateCards());
+    setCardOneIdx(-1);
+    setCardTwoIdx(-1);
   }
 
   return (
