@@ -11,9 +11,10 @@ import React, { useState } from 'react';
  */
 
 function Card(props) {
+  const cardValue = props.displayCard ? props.cardValue : '*';
   return (
     <div className='card' onClick={() => props.onClick() }>
-      {props.displayCard !== 0 && props.cardValue}
+      {cardValue}
     </div>
   )
 }
@@ -21,7 +22,7 @@ function Card(props) {
 function Marquee(props) {
   return (
     <div className='marquee'>
-      { props.displayMarquee !== 0 && <h1>{props.marqueeText}</h1> }
+      { props.displayMarquee && <h1>{props.marqueeText}</h1> }
     </div>
   );
 
@@ -41,7 +42,7 @@ function App() {
   const [cardOneIdx, setCardOneIdx] = useState(-1);
 
 
-  function revealCard(i) {
+  async function revealCard(i) {
     // Set appropriate state for card
     const revealedCard = { displayCard: 1, cardValue: cards[i].cardValue };
     setCards(cards.map((c, idx) => i === idx ? revealedCard : c));
@@ -52,23 +53,26 @@ function App() {
 
     } else {
       // Evaluate match
-      evaluateMatch(cardOneIdx, i);
+      await evaluateMatch(cardOneIdx, i);
     }
   }
 
   async function evaluateMatch(cardOneIdx, cardTwoIdx) {
     // some kind of a sleep function so that you can see both cards
     // If there's no match, set state appropriately
-    await sleep(1000);
-;    if (cards[cardOneIdx] === cards[cardTwoIdx]) {
+    await sleep(250);
+;   if (
+      cards[cardOneIdx].cardValue 
+      !== cards[cardTwoIdx].cardValue
+    ) {
       setCards(cards.map((c, i) => {
         if ([cardOneIdx, cardTwoIdx].includes(i)) {
           return { displayCard: 0, cardValue: c.cardValue };
         }
         return c;
       }));
-      setCardOneIdx(-1);
     }
+    setCardOneIdx(-1);
 
     // evaluateWin
     evaluateWin();
@@ -85,7 +89,7 @@ function App() {
 
   return (
     <div className="App">
-      <Marquee displayMarquee={1} marqueeText={'Concentration'} />
+      <Marquee displayMarquee={true} marqueeText={'Concentration'} />
       <Button buttonText={'Reset Game!'} onClick={() => resetGame()}/>
       <br />
       { cards.map((e, i) => <Card
@@ -94,6 +98,8 @@ function App() {
           cardValue={e.cardValue}
           onClick={() => revealCard(i)}
         />) }
+      <br />
+      <Marquee displayMarquee={evaluateWin()} marqueeText={'You won!'} />
     </div>
   );
 }
@@ -122,7 +128,7 @@ function generateCards() {
   for (let i = 0; i < 8; i += 1) {
     let i = 0;
     let j = 0;
-    while (i !== j) {
+    while (i === j) {
       i = Math.floor(Math.random()*16);
       j = Math.floor(Math.random()*16);
     }
