@@ -125,7 +125,7 @@ function generateCards() {
   }
   
   // Shuffle the deck
-  for (let i = 0; i < 8; i += 1) {
+  for (let k = 0; k < 128; k += 1) {
     let i = 0;
     let j = 0;
     while (i === j) {
